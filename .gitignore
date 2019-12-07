@@ -1,1 +1,5 @@
 target
+.idea
+maven-project.iml
+/server/server.iml
+/webapp/webapp.iml

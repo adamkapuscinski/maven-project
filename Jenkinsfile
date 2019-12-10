@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    archiveArtifacts artifacts: '**/*.extension'
     stages{
         stage('Build'){
             steps{
@@ -8,6 +7,11 @@ pipeline {
                 //bat 'mvn clean package'
                 //bat "docker build . --tag tomcatwebapp:${env.BUILD_ID}"
             }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: '*.war', onlyIfSuccessful: true
         }
     }
 }

@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    archiveArtifacts artifacts: '**/*.extension'
     stages{
         stage('Build'){
             steps{

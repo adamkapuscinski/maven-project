@@ -11,7 +11,7 @@ pipeline {
     }
     post {
         always {
-            archiveArtifacts artifacts: '*.war', onlyIfSuccessful: true
+            archiveArtifacts artifacts: '**/*.war', onlyIfSuccessful: true
         }
     }
 }
